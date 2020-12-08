@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       component: musicservice
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -47,7 +47,7 @@ spec:
   selector:
     matchLabels:
       component: orderservice
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -86,7 +86,7 @@ spec:
   selector:
     matchLabels:
       component: shoppingcartservice
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -125,7 +125,7 @@ spec:
   selector:
     matchLabels:
       component: musicstore
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
