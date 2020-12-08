@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: musicservice
-        image: #@ "{}/musicservice:latest".format(data.values.common.harborDomain)
+        image: #@ "{}/music-service:latest".format(data.values.registry.host)
         ports:
         - containerPort: 80
         env:
@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
       - name: orderservice
-        image: #@ "{}/orderservice:latest".format(data.values.common.harborDomain)
+        image: #@ "{}/order-service:latest".format(data.values.registry.host)
         ports:
         - containerPort: 80
         env:
@@ -95,7 +95,7 @@ spec:
     spec:
       containers:
       - name: shoppingcartservice
-        image: #@ "{}/shoppingcartservice:latest".format(data.values.common.harborDomain)
+        image: #@ "{}/cart-service:latest".format(data.values.registry.host)
         ports:
         - containerPort: 80
         env:
@@ -134,7 +134,7 @@ spec:
     spec:
       containers:
       - name: musicstore
-        image: #@ "{}/musicstore:latest".format(data.values.common.harborDomain)
+        image: #@ "{}/ui:latest".format(data.values.registry.host)
         ports:
         - containerPort: 80
         env:
