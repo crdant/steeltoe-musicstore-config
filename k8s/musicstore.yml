@@ -68,6 +68,7 @@ kind: Job
 metadata:
   name: musicservice
 spec:
+  backoffLimit: 3
   template:
     metadata:
       labels:
@@ -75,6 +76,7 @@ spec:
         component: musicservice
     spec:
       serviceAccountName: musicstore
+      restartPolicy: OnFailure
       containers:
       - name: musicservice
         image: #@ "{}/{}/music-service:latest".format(data.values.registry.host, data.values.registry.project)
@@ -126,12 +128,14 @@ kind: Job
 metadata:
   name: orderservice
 spec:
+  backoffLimit: 3
   template:
     metadata:
       labels:
         app: musicservices
         component: musicservice
     spec:
+      restartPolicy: OnFailure
       serviceAccountName: musicstore
       containers:
       - name: musicservice
@@ -184,6 +188,7 @@ kind: Job
 metadata:
   name: shoppingcartservice
 spec:
+  backoffLimit: 3
   template:
     metadata:
       labels:
@@ -191,6 +196,7 @@ spec:
         component: musicservice
     spec:
       serviceAccountName: musicstore
+      restartPolicy: OnFailure
       containers:
       - name: musicservice
         image: #@ "{}/{}/cart-service:latest".format(data.values.registry.host, data.values.registry.project)
@@ -242,6 +248,7 @@ kind: Job
 metadata:
   name: musicstore
 spec:
+  backoffLimit: 3
   template:
     metadata:
       labels:
@@ -249,6 +256,7 @@ spec:
         component: musicservice
     spec:
       serviceAccountName: musicstore
+      restartPolicy: OnFailure
       containers:
       - name: musicservice
         image: #@ "{}/{}/ui:latest".format(data.values.registry.host, data.values.registry.project)
