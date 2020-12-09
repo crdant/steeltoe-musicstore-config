@@ -9,7 +9,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: config-access
-  namespace: default
+  namespace: musicstore
 rules:
 - apiGroups:
   - ""
@@ -26,7 +26,7 @@ kind: RoleBinding
 metadata:
   creationTimestamp: null
   name: config-access
-  namespace: default
+  namespace: musicstore
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -277,18 +277,3 @@ spec:
   selector:
     app: musicstore
   type: LoadBalancer
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: musicstoreui
-data:
-  ASPNETCORE_ENVIRONMENT: Kubernetes
-  eureka__client__serviceUrl: http://eurekaserver.serrano.tanzu.shortrib.io/eureka
-  eureka__instance__healthCheckUrlPath: /actuator/health
-  eureka__instance_statusPageUrlPath: /actuator/info
-  logging__logLevel__Steeltoe.Management: Critical
-  management__endpoints__path: /actuator
-  sqlserver__credentials__password: SteeltoeR0cks!
-  sqlserver__credentials__server: sqlserver
-  sqlserver__credentials__username: sa
