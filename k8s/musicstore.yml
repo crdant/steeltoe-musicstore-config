@@ -62,8 +62,6 @@ spec:
             value: "80"
           - name: eureka__instance__hostName
             value: "musicservice"
-        envFrom:
-          - configMapRef:
 ---
 apiVersion: apps/v1
 kind: Job
@@ -122,9 +120,6 @@ spec:
             value: "80"
           - name: eureka__instance__hostName
             value: "orderservice"
-        envFrom:
-          - configMapRef:
-              name: storeconfig
 ---
 apiVersion: apps/v1
 kind: Job
@@ -183,9 +178,6 @@ spec:
             value: "80"
           - name: eureka__instance__hostName
             value: "shoppingcartservice"
-        envFrom:
-          - configMapRef:
-              name: storeconfig
 ---
 apiVersion: apps/v1
 kind: Job
