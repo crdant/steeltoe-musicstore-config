@@ -1,5 +1,39 @@
 #@ load("@ytt:data", "data")
 ---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: musicstore
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: config-access
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - secrets
+  verbs:
+  - get
+  - list
+  - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  creationTimestamp: null
+  name: config-access
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: config-access
+subjects:
+- kind: ServiceAccount
+  name: musicstore
+  namespace: musicstore
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,6 +49,7 @@ spec:
         app: musicservices
         component: musicservice
     spec:
+      serviceAccountName: musicservice
       containers:
       - name: musicservice
         image: #@ "{}/{}/music-service:latest".format(data.values.registry.host, data.values.registry.project)
@@ -54,6 +89,7 @@ spec:
         app: musicservices
         component: orderservice
     spec:
+      serviceAccountName: musicservice
       containers:
       - name: orderservice
         image: #@ "{}/{}/order-service:latest".format(data.values.registry.host, data.values.registry.project)
@@ -93,6 +129,7 @@ spec:
         app: musicservices
         component: shoppingcartservice
     spec:
+      serviceAccountName: musicservice
       containers:
       - name: shoppingcartservice
         image: #@ "{}/{}/cart-service:latest".format(data.values.registry.host, data.values.registry.project)
@@ -132,6 +169,7 @@ spec:
         app: musicstore
         component: musicstore
     spec:
+      serviceAccountName: musicservice
       containers:
       - name: musicstore
         image: #@ "{}/{}/ui:latest".format(data.values.registry.host, data.values.registry.project)
