@@ -63,7 +63,7 @@ spec:
           - name: eureka__instance__hostName
             value: "musicservice"
 ---
-apiVersion: apps/v1
+apiVersion: batch/v1
 kind: Job
 metadata:
   name: musicservice
@@ -121,7 +121,7 @@ spec:
           - name: eureka__instance__hostName
             value: "orderservice"
 ---
-apiVersion: apps/v1
+apiVersion: batch/v1
 kind: Job
 metadata:
   name: orderservice
@@ -179,7 +179,7 @@ spec:
           - name: eureka__instance__hostName
             value: "shoppingcartservice"
 ---
-apiVersion: apps/v1
+apiVersion: batch/v1
 kind: Job
 metadata:
   name: shoppingcartservice
@@ -237,7 +237,7 @@ spec:
           - name: eureka__instance__hostName
             value: "musicstore"
 ---
-apiVersion: apps/v1
+apiVersion: batch/v1
 kind: Job
 metadata:
   name: musicstore
