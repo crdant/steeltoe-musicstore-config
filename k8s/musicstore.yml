@@ -257,7 +257,7 @@ spec:
         env:
           - name: INIT
             value: true
-----
+---
 apiVersion: v1
 kind: Service
 metadata:
