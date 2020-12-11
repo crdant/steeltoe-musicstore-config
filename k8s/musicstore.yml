@@ -74,7 +74,7 @@ spec:
         - containerPort: 8080
         env:
           - name: PORT
-            value: "80"
+            value: "8080"
           - name: eureka__instance__hostName
             value: "musicservice"
         envFrom:
@@ -144,7 +144,7 @@ spec:
         - containerPort: 8080
         env:
           - name: PORT
-            value: "80"
+            value: "8080"
           - name: eureka__instance__hostName
             value: "orderservice"
         envFrom:
@@ -214,7 +214,7 @@ spec:
         - containerPort: 8080
         env:
           - name: PORT
-            value: "80"
+            value: "8080"
           - name: eureka__instance__hostName
             value: "shoppingcartservice"
         envFrom:
@@ -284,7 +284,7 @@ spec:
         - containerPort: 8080
         env:
           - name: PORT
-            value: "80"
+            value: "8080"
           - name: eureka__instance__hostName
             value: "musicstore"
         envFrom:
