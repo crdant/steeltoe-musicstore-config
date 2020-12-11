@@ -71,7 +71,7 @@ spec:
       - name: musicservice
         image: #@ "{}/{}/music-service:latest".format(data.values.registry.host, data.values.registry.project)
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
           - name: PORT
             value: "80"
@@ -101,7 +101,7 @@ spec:
       - name: musicservice
         image: #@ "{}/{}/music-service:latest".format(data.values.registry.host, data.values.registry.project)
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
           - name: INIT
             value: "true"
@@ -117,7 +117,7 @@ metadata:
   name: musicservice
 spec:
   ports:
-  - port: 80
+  - port: 8080
   selector:
     component: musicservice
 ---
@@ -141,7 +141,7 @@ spec:
       - name: orderservice
         image: #@ "{}/{}/order-service:latest".format(data.values.registry.host, data.values.registry.project)
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
           - name: PORT
             value: "80"
@@ -171,7 +171,7 @@ spec:
       - name: musicservice
         image: #@ "{}/{}/order-service:latest".format(data.values.registry.host, data.values.registry.project)
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
           - name: INIT
             value: "true"
@@ -187,7 +187,7 @@ metadata:
   name: orderservice
 spec:
   ports:
-  - port: 80
+  - port: 8080
   selector:
     component: orderservice
 ---
@@ -211,7 +211,7 @@ spec:
       - name: shoppingcartservice
         image: #@ "{}/{}/cart-service:latest".format(data.values.registry.host, data.values.registry.project)
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
           - name: PORT
             value: "80"
@@ -241,7 +241,7 @@ spec:
       - name: musicservice
         image: #@ "{}/{}/cart-service:latest".format(data.values.registry.host, data.values.registry.project)
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
           - name: INIT
             value: "true"
@@ -257,7 +257,7 @@ metadata:
   name: shoppingcartservice
 spec:
   ports:
-  - port: 80
+  - port: 8080
   selector:
     component: shoppingcartservice
 ---
@@ -281,7 +281,7 @@ spec:
       - name: musicstore
         image: #@ "{}/{}/ui:latest".format(data.values.registry.host, data.values.registry.project)
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
           - name: PORT
             value: "80"
@@ -311,7 +311,7 @@ spec:
       - name: musicservice
         image: #@ "{}/{}/ui:latest".format(data.values.registry.host, data.values.registry.project)
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
           - name: INIT
             value: "true"
@@ -327,8 +327,8 @@ metadata:
   name: musicstore
 spec:
   ports:
-  - port: 80
-    targetPort: 80
+  - port: 8080
+    targetPort: 8080
   selector:
     app: musicstore
   type: LoadBalancer
