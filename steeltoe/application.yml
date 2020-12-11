@@ -7,7 +7,6 @@ Logging:
     System: Warning
     Microsoft: Warning
     Steeltoe: Information
-   HealthCheckUrlPath: /actuator/health
 sqlserver:
   credentials:
     username: sa
