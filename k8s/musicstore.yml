@@ -37,7 +37,7 @@ subjects:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: actuator
+    name: actuator
 data:
   management__endpoints__path: /actuator
 ---
@@ -79,9 +79,9 @@ spec:
             value: "musicservice"
         envFrom:
           - configMapRef:
-            name: eureka
+              name: eureka
           - configMapRef:
-            name: actuator
+              name: actuator
 ---
 apiVersion: batch/v1
 kind: Job
@@ -107,9 +107,9 @@ spec:
             value: "true"
         envFrom:
           - configMapRef:
-            name: eureka
+              name: eureka
           - configMapRef:
-            name: actuator
+              name: actuator
 ---
 apiVersion: v1
 kind: Service
@@ -149,7 +149,9 @@ spec:
             value: "orderservice"
         envFrom:
           - configMapRef:
-            name: eureka
+              name: eureka
+          - configMapRef:
+              name: actuator
 ---
 apiVersion: batch/v1
 kind: Job
@@ -175,9 +177,9 @@ spec:
             value: "true"
         envFrom:
           - configMapRef:
-            name: eureka
+              name: eureka
           - configMapRef:
-            name: actuator
+              name: actuator
 ---
 apiVersion: v1
 kind: Service
@@ -217,9 +219,9 @@ spec:
             value: "shoppingcartservice"
         envFrom:
           - configMapRef:
-            name: eureka
+              name: eureka
           - configMapRef:
-            name: actuator
+              name: actuator
 ---
 apiVersion: batch/v1
 kind: Job
@@ -245,9 +247,9 @@ spec:
             value: "true"
         envFrom:
           - configMapRef:
-            name: eureka
+              name: eureka
           - configMapRef:
-            name: actuator
+              name: actuator
 ---
 apiVersion: v1
 kind: Service
@@ -287,9 +289,9 @@ spec:
             value: "musicstore"
         envFrom:
           - configMapRef:
-            name: eureka
+              name: eureka
           - configMapRef:
-            name: actuator
+              name: actuator
 ---
 apiVersion: batch/v1
 kind: Job
@@ -315,9 +317,9 @@ spec:
             value: "true"
         envFrom:
           - configMapRef:
-            name: eureka
+              name: eureka
           - configMapRef:
-            name: actuator
+              name: actuator
 ---
 apiVersion: v1
 kind: Service
