@@ -1,0 +1,21 @@
+AppSettings:
+  SiteTitle: Music Store
+  CacheDbResults: true
+Logging:
+  LogLevel:
+    Default: Information
+    System: Warning
+    Microsoft: Warning
+    Steeltoe: Information
+   HealthCheckUrlPath: /actuator/health
+sqlserver:
+  credentials:
+    username: sa
+    password: SteeltoeR0cks!
+management:
+  tracing:
+    alwaysSample: true
+    useShortTraceIds: true
+    exporter:
+      zipkin:
+        useShortTraceIds: true
