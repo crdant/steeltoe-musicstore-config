@@ -78,10 +78,9 @@ spec:
           - name: eureka__instance__hostName
             value: "musicservice"
         envFrom:
-          configMapRef:
+          - configMapRef:
             name: eureka
-        envFrom:
-          configMapRef:
+          - configMapRef:
             name: actuator
 ---
 apiVersion: batch/v1
@@ -107,13 +106,9 @@ spec:
           - name: INIT
             value: "true"
         envFrom:
-          configMapRef:
+          - configMapRef:
             name: eureka
-        envFrom:
-          configMapRef:
-            name: actuator
-        envFrom:
-          configMapRef:
+          - configMapRef:
             name: actuator
 ---
 apiVersion: v1
@@ -153,11 +148,8 @@ spec:
           - name: eureka__instance__hostName
             value: "orderservice"
         envFrom:
-          configMapRef:
+          - configMapRef:
             name: eureka
-        envFrom:
-          configMapRef:
-            name: actuator
 ---
 apiVersion: batch/v1
 kind: Job
@@ -182,10 +174,9 @@ spec:
           - name: INIT
             value: "true"
         envFrom:
-          configMapRef:
+          - configMapRef:
             name: eureka
-        envFrom:
-          configMapRef:
+          - configMapRef:
             name: actuator
 ---
 apiVersion: v1
@@ -225,10 +216,9 @@ spec:
           - name: eureka__instance__hostName
             value: "shoppingcartservice"
         envFrom:
-          configMapRef:
+          - configMapRef:
             name: eureka
-        envFrom:
-          configMapRef:
+          - configMapRef:
             name: actuator
 ---
 apiVersion: batch/v1
@@ -254,10 +244,9 @@ spec:
           - name: INIT
             value: "true"
         envFrom:
-          configMapRef:
+          - configMapRef:
             name: eureka
-        envFrom:
-          configMapRef:
+          - configMapRef:
             name: actuator
 ---
 apiVersion: v1
@@ -297,10 +286,9 @@ spec:
           - name: eureka__instance__hostName
             value: "musicstore"
         envFrom:
-          configMapRef:
+          - configMapRef:
             name: eureka
-        envFrom:
-          configMapRef:
+          - configMapRef:
             name: actuator
 ---
 apiVersion: batch/v1
@@ -326,10 +314,9 @@ spec:
           - name: INIT
             value: "true"
         envFrom:
-          configMapRef:
+          - configMapRef:
             name: eureka
-        envFrom:
-          configMapRef:
+          - configMapRef:
             name: actuator
 ---
 apiVersion: v1
