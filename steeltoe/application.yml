@@ -11,6 +11,7 @@ sqlserver:
   credentials:
     username: sa
     password: SteeltoeR0cks!
+    server: sqlserver
 management:
   tracing:
     alwaysSample: true
