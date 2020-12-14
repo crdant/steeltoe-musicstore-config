@@ -44,11 +44,18 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: eureka
+  name: eurekaclient
 data:
   eureka__client__serviceUrl: http://eurekaserver:8761/eureka
   eureka__instance__healthCheckUrlPath: /actuator/health
   eureka__instance__statusPageUrlPath: /actuator/info
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configclient
+data:
+  spring__cloud__config__uri: http://configserver:8888
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -78,7 +85,9 @@ spec:
             value: "musicservice"
         envFrom:
           - configMapRef:
-              name: eureka
+              name: eurekaclient
+          - configMapRef:
+              name: configclient
           - configMapRef:
               name: actuator
 ---
@@ -106,7 +115,9 @@ spec:
             value: "true"
         envFrom:
           - configMapRef:
-              name: eureka
+              name: eurekaclient
+          - configMapRef:
+              name: configclient
           - configMapRef:
               name: actuator
 ---
@@ -148,7 +159,9 @@ spec:
             value: "orderservice"
         envFrom:
           - configMapRef:
-              name: eureka
+              name: eurekaclient
+          - configMapRef:
+              name: configclient
           - configMapRef:
               name: actuator
 ---
@@ -176,7 +189,9 @@ spec:
             value: "true"
         envFrom:
           - configMapRef:
-              name: eureka
+              name: eurekaclient
+          - configMapRef:
+              name: configclient
           - configMapRef:
               name: actuator
 ---
@@ -218,7 +233,9 @@ spec:
             value: "shoppingcartservice"
         envFrom:
           - configMapRef:
-              name: eureka
+              name: eurekaclient
+          - configMapRef:
+              name: configclient
           - configMapRef:
               name: actuator
 ---
@@ -246,7 +263,9 @@ spec:
             value: "true"
         envFrom:
           - configMapRef:
-              name: eureka
+              name: eurekaclient
+          - configMapRef:
+              name: configclient
           - configMapRef:
               name: actuator
 ---
@@ -288,7 +307,9 @@ spec:
             value: "musicstore"
         envFrom:
           - configMapRef:
-              name: eureka
+              name: eurekaclient
+          - configMapRef:
+              name: configclient
           - configMapRef:
               name: actuator
 ---
@@ -316,7 +337,9 @@ spec:
             value: "true"
         envFrom:
           - configMapRef:
-              name: eureka
+              name: eurekaclient
+          - configMapRef:
+              name: configclient
           - configMapRef:
               name: actuator
 ---
