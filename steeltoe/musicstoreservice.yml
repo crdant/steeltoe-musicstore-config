@@ -1,0 +1,3 @@
+sqlserver:
+  credentials:
+    database: MusicService
