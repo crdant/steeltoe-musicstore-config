@@ -1,0 +1,29 @@
+AppSettings:
+  SiteTitle: Music Store
+  CacheDbResults: true
+Logging:
+  LogLevel:
+    Default: Information
+    System: Warning
+    Microsoft: Warning
+    Steeltoe: Information
+sqlserver:
+  credentials:
+    username: sa
+    password: SteeltoeR0cks!
+    server: sqlserver
+    database: MusicStore
+management:
+  tracing:
+    alwaysSample: true
+    useShortTraceIds: true
+    exporter:
+      zipkin:
+        useShortTraceIds: true
+DefaultAdminUsername: Administrator@test.com
+DefaultAdminPassword: YouShouldChangeThisPassword1!
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        requestVolumeThreshold: 3

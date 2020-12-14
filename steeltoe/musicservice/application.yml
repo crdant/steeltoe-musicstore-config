@@ -12,6 +12,7 @@ sqlserver:
     username: sa
     password: SteeltoeR0cks!
     server: sqlserver
+    database: MusicService
 management:
   tracing:
     alwaysSample: true

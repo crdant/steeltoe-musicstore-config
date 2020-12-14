@@ -1,0 +1,22 @@
+AppSettings:
+  SiteTitle: Music Store
+  CacheDbResults: true
+Logging:
+  LogLevel:
+    Default: Information
+    System: Warning
+    Microsoft: Warning
+    Steeltoe: Information
+sqlserver:
+  credentials:
+    username: sa
+    password: SteeltoeR0cks!
+    server: sqlserver
+    database: OrderProcessing
+management:
+  tracing:
+    alwaysSample: true
+    useShortTraceIds: true
+    exporter:
+      zipkin:
+        useShortTraceIds: true
