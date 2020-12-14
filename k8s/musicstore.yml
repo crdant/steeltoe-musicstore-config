@@ -83,7 +83,7 @@ spec:
             value: "8080"
           - name: eureka__instance__hostName
             value: "musicservice"
-          - name: spring__kubernetes__namespace
+          - name: spring__cloud__kubernetes__namespace
             valueFrom:
               fieldRef:
                 fieldPath: metadata.namespace
@@ -117,7 +117,7 @@ spec:
         env:
           - name: INIT
             value: "true"
-          - name: spring__kubernetes__namespace
+          - name: spring__cloud__kubernetes__namespace
             valueFrom:
               fieldRef:
                 fieldPath: metadata.namespace
@@ -165,7 +165,7 @@ spec:
             value: "8080"
           - name: eureka__instance__hostName
             value: "orderservice"
-          - name: spring__kubernetes__namespace
+          - name: spring__cloud__kubernetes__namespace
             valueFrom:
               fieldRef:
                 fieldPath: metadata.namespace
@@ -199,7 +199,7 @@ spec:
         env:
           - name: INIT
             value: "true"
-          - name: spring__kubernetes__namespace
+          - name: spring__cloud__kubernetes__namespace
             valueFrom:
               fieldRef:
                 fieldPath: metadata.namespace
@@ -247,7 +247,7 @@ spec:
             value: "8080"
           - name: eureka__instance__hostName
             value: "shoppingcartservice"
-          - name: spring__kubernetes__namespace
+          - name: spring__cloud__kubernetes__namespace
             valueFrom:
               fieldRef:
                 fieldPath: metadata.namespace
@@ -281,7 +281,7 @@ spec:
         env:
           - name: INIT
             value: "true"
-          - name: spring__kubernetes__namespace
+          - name: spring__cloud__kubernetes__namespace
             valueFrom:
               fieldRef:
                 fieldPath: metadata.namespace
@@ -329,7 +329,7 @@ spec:
             value: "8080"
           - name: eureka__instance__hostName
             value: "musicstore"
-          - name: spring__kubernetes__namespace
+          - name: spring__cloud__kubernetes__namespace
             valueFrom:
               fieldRef:
                 fieldPath: metadata.namespace
@@ -363,7 +363,7 @@ spec:
         env:
           - name: INIT
             value: "true"
-          - name: spring__kubernetes__namespace
+          - name: spring__cloud__kubernetes__namespace
             valueFrom:
               fieldRef:
                 fieldPath: metadata.namespace
